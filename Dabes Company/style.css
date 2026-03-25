@@ -1,0 +1,452 @@
+:root {
+	--primary: #ff07c1;
+	--primary-dark: #d605a3;
+	--bg-light: #fff3ea;
+	--white: #ffffff;
+	--dark: #2d3436;
+	--gray: #636e72;
+	--success: #25d366;
+	--instagram: #d62976;
+	--location: #0ea5e9;
+	--header-height: 80px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'helvetica', 'Poppins';
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--white);
+	color: var(--dark);
+	line-height: 1.6;
+	overflow-x: hidden;
+}
+
+/* --- NAVIGATION BAR --- */
+header {
+	height: var(--header-height);
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 8%;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+	transition: 0.3s;
+}
+
+.logo {
+	font-size: 1.5rem;
+	font-weight: 800;
+	color: var(--primary);
+	text-decoration: none;
+	letter-spacing: -1px;
+}
+
+.nav-links {
+	display: flex;
+	list-style: none;
+	gap: 30px;
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: var(--dark);
+	font-weight: 600;
+	font-size: 0.95rem;
+	transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+	color: var(--primary);
+}
+
+.hamburger {
+	display: none;
+	cursor: pointer;
+	font-size: 1.5rem;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+	padding: calc(var(--header-height) + 50px) 8% 80px;
+	background: var(--bg-light);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 90vh;
+	gap: 40px;
+}
+
+.hero-content {
+	flex: 1;
+	max-width: 600px;
+}
+.hero-content h1 {
+	font-size: clamp(2.2rem, 5vw, 3.5rem);
+	line-height: 1.1;
+	margin-bottom: 20px;
+	font-weight: 800;
+}
+.hero-content h1 span {
+	color: var(--primary);
+}
+.hero-content p {
+	font-size: 1.1rem;
+	color: var(--gray);
+	margin-bottom: 30px;
+}
+
+.hero-btns {
+	display: flex;
+	gap: 15px;
+	flex-wrap: wrap;
+}
+.btn {
+	padding: 14px 32px;
+	border-radius: 50px;
+	text-decoration: none;
+	font-weight: 700;
+	transition: 0.3s;
+	display: inline-block;
+}
+.btn-primary {
+	background: var(--primary);
+	color: white;
+	box-shadow: 0 8px 20px rgba(255, 7, 193, 0.2);
+}
+.btn-primary:hover {
+	transform: translateY(-3px);
+	background: var(--primary-dark);
+}
+.btn-outline {
+	border: 2px solid var(--primary);
+	color: var(--primary);
+}
+.btn-outline:hover {
+	background: var(--primary);
+	color: white;
+}
+
+.hero-image {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+.hero-image img {
+	width: 100%;
+	max-width: 450px;
+	border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+	animation: morphing 8s ease-in-out infinite;
+	box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* --- GENERAL SECTIONS --- */
+.section-padding {
+	padding: 80px 8%;
+}
+.bg-light {
+	background: var(--bg-light);
+}
+.section-title {
+	text-align: center;
+	margin-bottom: 50px;
+}
+.section-title h2 {
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+}
+
+.menu-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 30px;
+}
+
+.menu-card {
+	background: white;
+	border-radius: 25px;
+	padding: 25px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+	transition: 0.4s;
+	border: 1px solid #f0f0f0;
+	display: flex;
+	flex-direction: column;
+}
+
+.menu-card:hover {
+	transform: translateY(-15px);
+}
+.menu-card img {
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 20px;
+	margin-bottom: 20px;
+}
+.menu-card .price {
+	color: var(--primary);
+	font-weight: 800;
+	font-size: 1.2rem;
+	margin-bottom: 15px;
+}
+
+.wa-order-btn {
+	background: var(--success);
+	color: white;
+	text-decoration: none;
+	padding: 12px;
+	text-align: center;
+	border-radius: 12px;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+/* --- CONTACT CARDS --- */
+.contact-container {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	flex-wrap: wrap;
+}
+.contact-card {
+	background: white;
+	padding: 40px 30px;
+	border-radius: 30px;
+	width: 320px;
+	text-decoration: none;
+	color: var(--dark);
+	text-align: center;
+	transition: 0.4s;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.contact-card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+.icon-box {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.whatsapp .icon-box {
+	background: #e3f9eb;
+	color: var(--success);
+	transition: 0.3s;
+}
+
+/* Instagram Default */
+.instagram .icon-box {
+	background: #fff0f3;
+	color: var(--instagram);
+	transition: 0.3s;
+}
+
+/* Location Default */
+.location .icon-box {
+	background: #e0f2fe;
+	color: var(--location);
+	transition: 0.3s;
+}
+
+/* EFEK HOVER WHATSAPP */
+.contact-card.whatsapp:hover {
+	background-color: var(--success);
+	transform: translateY(-15px);
+	box-shadow: 0 20px 40px rgba(37, 211, 102, 0.3);
+	border-color: var(--success);
+}
+
+/* EFEK HOVER INSTAGRAM */
+.contact-card.instagram:hover {
+	background-color: var(--instagram);
+	transform: translateY(-15px);
+	box-shadow: 0 20px 40px rgba(206, 51, 80, 0.829);
+	border-color: var(--instagram);
+}
+
+/* EFEK HOVER LOCATION */
+.contact-card.location:hover {
+	background-color: var(--location);
+	transform: translateY(-15px);
+	box-shadow: 0 20px 40px rgba(14, 165, 233, 0.3);
+	border-color: var(--location);
+}
+
+/* Perubahan Warna Teks & Ikon saat Hover untuk Kontak */
+.contact-card:hover h3,
+.contact-card:hover p,
+.contact-card:hover .action-link {
+	color: var(--white) !important;
+}
+
+.contact-card:hover .icon-box {
+	background-color: rgba(255, 255, 255, 0.2);
+	color: var(--white);
+}
+.action-link {
+	margin-top: 15px;
+	font-weight: 700;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+footer {
+	text-align: center;
+	padding: 30px;
+	background: white;
+	color: var(--gray);
+	border-top: 1px solid #eee;
+}
+
+/* Layar Medium / Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+	header {
+		padding: 0 5%;
+	}
+
+	.section-padding {
+		padding: 60px 5%;
+	}
+
+	.hero {
+		padding: calc(var(--header-height) + 30px) 5% 60px;
+		gap: 30px;
+	}
+
+	.hero-content h1 {
+		font-size: 2.8rem;
+	}
+}
+
+/* Tablet & HP Besar (max-width: 768px) */
+@media (max-width: 768px) {
+	.hamburger {
+		display: block;
+	}
+
+	/* Navbar Mobile Menu */
+	.nav-links {
+		position: fixed;
+		top: var(--header-height);
+		left: -100%;
+		width: 100%;
+		height: calc(100vh - var(--header-height));
+		background: rgba(255, 255, 255, 0.98);
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		padding-top: 50px;
+		transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+		gap: 35px;
+		z-index: 999;
+	}
+
+	.nav-links.active {
+		left: 0;
+	}
+
+	.nav-links a {
+		font-size: 1.2rem;
+	}
+
+	/* Hero Responsive */
+	.hero {
+		flex-direction: column-reverse; /* Gambar di atas, teks di bawah (opsional) atau tetap column */
+		flex-direction: column;
+		text-align: center;
+		padding-top: calc(var(--header-height) + 40px);
+		min-height: auto;
+	}
+
+	.hero-content {
+		max-width: 100%;
+	}
+
+	.hero-btns {
+		justify-content: center;
+	}
+
+	.hero-image img {
+		max-width: 320px;
+		margin-bottom: 20px;
+	}
+
+	/* Menu & Content */
+	.menu-grid {
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 20px;
+	}
+
+	.menu-card img {
+		height: 250px; /* Tinggi gambar sedikit dikurangi di tablet */
+	}
+
+	.section-title h2 {
+		font-size: 2.1rem;
+	}
+
+	.contact-card {
+		width: 100%; /* Kartu kontak memenuhi lebar layar di HP */
+	}
+}
+
+/* HP Kecil (max-width: 480px) */
+@media (max-width: 480px) {
+	.hero-content h1 {
+		font-size: 1.8rem;
+	}
+
+	.hero-content p {
+		font-size: 1rem;
+	}
+
+	.btn {
+		width: 100%; /* Tombol jadi lebar penuh di HP sangat kecil */
+		padding: 12px 20px;
+	}
+
+	.section-padding {
+		padding: 50px 4%;
+	}
+
+	.menu-card {
+		padding: 15px;
+	}
+
+	.menu-card img {
+		height: 200px;
+	}
+
+	.section-title h2 {
+		font-size: 1.8rem;
+	}
+}
